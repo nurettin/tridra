@@ -1,1 +1,1 @@
-web: node server.js
+web: vendor/node/bin/node server.js
