@@ -12,7 +12,7 @@ var path = require('path');
 
 var mongodb = require('mongodb');
 var MongoClient = mongodb.MongoClient;
-var url = 'mongodb://localhost:27017/blog';
+var url = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/blog';
 
 var passport = require('passport');
 var passportLocal = require('passport-local');
