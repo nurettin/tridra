@@ -1,0 +1,1 @@
+export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/Users/batuhancimen/Documents/Development/mongodb/bin:/Users/batuhancimen/Documents/Development/mongodb/bin

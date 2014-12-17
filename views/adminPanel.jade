@@ -1,0 +1,43 @@
+//
+   Created by batuhancimen on 12/12/14.
+
+extends layout
+block content
+   div(class="site-wrapper")
+      div(class="site-wrapper-inner")
+         header(class="cover-container")
+            div(class="inner-cover")
+               div(class="col-sm-6 border-style")
+                  div(class="panel-header")
+                     h2(id="ideas") IDEAS
+                     div(class="btn-newPost-out")
+                        div(class="btn-newPost-in")
+                           a(href="/panel/newpost" , class="glyphicon glyphicon-plus")
+                     h6(class="panel-tips") Start typing an idea here..
+                  - for (var i = notpublished.length - 1; i >= 0 ; --i) {
+                  div(class="input-box-done")
+                     a(href="/panel/editPost/#{notpublished[i]._id}") #{notpublished[i].title}
+                     form(action="/publish/#{notpublished[i]._id}" , method="POST")
+                        input(type="hidden" , name='_method' , value="PUT")
+                        input(type="submit", value="" , class="btn btn-lg editbtn btn-default")
+                     form(action="/postDelete/#{notpublished[i]._id}" , method="POST")
+                        input(type="hidden" , name='_method' , value="DELETE")
+                        input(type="submit", value="" , class="btn btn-lg deletebtn btn-default")
+                  - }
+
+               div(class="col-sm-6")
+                  div(class="panel-header")
+                        h2(id="Published") PUBLISHED
+                        div(class="btn-newPost-out")
+                           div(class="btn-newPost-in")
+                              a(href="/#{username}" , class="glyphicon glyphicon-plus")
+                        h6(class="panel-tips") Your published ideas!
+                        div(class="panel-header")
+                     - for (var i = published.length - 1; i >= 0 ; --i) {
+                        div(class="input-box-done")
+                           a(href="/panel/editPost/#{published[i]._id}") #{published[i].title}
+                           form(action="/unpublish/#{published[i]._id}" , method="POST")
+                              input(type="hidden" , name='_method' , value="PUT")
+                              input(type="submit", value="" , class="btn btn-lg editbtn btn-default")
+                   - }
+

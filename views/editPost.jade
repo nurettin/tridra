@@ -1,0 +1,21 @@
+extends layout
+block content
+    div(class="site-wrapper")
+        div(class="site-wrapper-inner")
+            div(class="inner-cover")
+                p(class="first") Tell me how are feeling today
+                form(accept-charset="UTF-8" , action="/edit/save" , method="POST")
+                    input(type="hidden", name="_method" , value="PUT")
+                    input(type="hidden", name="post_id" , value="#{post_id}")
+
+                    div(class="input-box-done")
+                        label(for="title")
+                        input(name="title",autofocus="autofocus" ,class="sing-up-input" , type="text" , value="#{values[0].title}")
+                        br
+                    div(class="input-box-done")
+                        label(for="paragraph")
+                        textarea(name="paragraph",autofocus="autofocus",class="sing-up-input" , type="text" , cols="30" , rows="5" ) #{values[0].paragraph}
+                        br
+                    div(class="input-box-done")
+                        input(type="submit", value="Save" , class="btn btn-lg btn-default")
+            include footer

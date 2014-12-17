@@ -1,0 +1,23 @@
+extends layout
+
+block content
+
+    div(class="site-wrapper")
+        div(class="site-wrapper-inner")
+            div(class="inner-cover")
+                p(class="first") I am exited to hear your new thoughts.
+                form(accept-charset="UTF-8" , action="/panel/newpost" , method="POST")
+                    input(type="hidden", name="date" )
+                    div(class="input-box-done")
+                        input(name="user_id", type="hidden" , value="#{user_id}")
+                        label(for="title")
+                        input(name="title",autofocus="autofocus", placeholder="Title" ,class="sing-up-input" , type="text" )
+                        br
+                    div(class="input-box-done")
+                        label(for="paragraph")
+                        textarea(name="paragraph",autofocus="autofocus", placeholder="Type what you're feeling!!",class="sing-up-input" , type="text" , cols="30" , rows="5")
+                        br
+                    div(class="input-box-done")
+                        input(type="submit", value="Post it!" , class="btn btn-lg btn-default")
+
+    include footer

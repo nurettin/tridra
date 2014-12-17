@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Passport</title>
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css">
+</head>
+
+<body>
+<div class="container">
+    <% if (!isAuthenticated) { %>
+        <a href="/login">Login Here</a>
+    <% } else { %>
+        <h1>Hello,  <%= user.username %> ! </h1>
+        <a href="/logout"> Logout </a>
+    <% } %>
+
+</div>
+<script src="jquery/dist/jquery.js"></script>
+<script src="bootstrap/dist/js/bootstrap.js"></script>
+</body>
+</html>

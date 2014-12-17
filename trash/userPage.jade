@@ -1,0 +1,16 @@
+extends layout
+block content
+    div(class="site-wrapper")
+        div(class="site-wrapper-inner")
+            div(class="cover-container")
+                div(class="inner-cover")
+                    figure(id="home_figure" , class="home_figure_active")
+                    h1(id="TriDraLog")
+                        a(href="/" , class="TriDraLog-a") TriDraLog
+                   h2(id="home_tagline") Simple and elegant blogging system for free.
+                   a(href="/signup" , id="sign_up_home" , class="btn btn-lg btn-default") sign up
+                   a(href="/login" , id="login_home" , class="btn btn-lg btn-default") login
+                div(class="mustfoot")
+                    div(class="mustfoot-inner")
+                        p Help us to improve our system with your feedbacks ;)
+    include footer

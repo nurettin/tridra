@@ -1,0 +1,26 @@
+extends layout
+block content
+   - if(isAuthenticated) {
+   div(class="btn-newPost-out")
+      div(class="btn-newPost-in")
+         a(href="/panel" , class="glyphicon glyphicon-plus")
+   div(id="logout")
+      div(class="btn-newPost-in")
+         a(href="/logout" , class="glyphicon glyphicon-plus")
+         - }
+      div(class="site-wrapper-inner")
+
+         section(class="cover-container" id="postpage")
+            article(id="#{values[0]._id}")
+            time(datetime="#{values[0].date" , class="article-time") #{values[0].date}
+            h1(class="article-title")
+               a(href="/#{username}/#{values[0]._id}") #{values[0].title}
+            a(href="/#{username}/#{values[0]._id}")
+               p  #{values[0].paragraph}
+            -if(isAuthenticated) {
+            a(href="/edit/#{values[0]._id}" , class="btn btn-lg  editbtn btn-default" )
+            form(action="/postDelete/#{values[0]._id}" , method="POST")
+               input(type="hidden" , name='_method' , value="DELETE")
+               input(type="hidden" , name="user_id" , value="#{user_id}")
+               input(type="submit", value="" , class="btn btn-lg deletebtn btn-default")
+            - }

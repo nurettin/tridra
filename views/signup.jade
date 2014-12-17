@@ -1,0 +1,30 @@
+extends layout
+block content
+    div(class="site-wrapper")
+        div(class="site-wrapper-inner")
+            div(class="inner-cover")
+                h1(class="title") Hello!
+                p
+                    span(class="logoize") TriDraLog
+                p(class="first") is a free blogging platform designed to help you for typing your feelings simpliest
+                p(class="first") Sounds good? Great. Let's get to know each other.
+                form(accept-charset="UTF-8" , action="/signup" , method="POST")
+                    input(type="hidden", name="date" , value= new Date() )
+                    div(class="input-box-done")
+                        label(for="username")
+                        input(name="username",autofocus="autofocus", placeholder="Your special username?" ,class="sing-up-input" , type="text" )
+                    div(class="input-box-done")
+                        label(for="email")
+                        input(name="email",autofocus="autofocus", placeholder="What's your email?" ,class="sing-up-input" , type="text" )
+                    div(class="input-box-done")
+                        label(for="password")
+                        input(name="password",autofocus="autofocus", placeholder="Choose a password",class="sing-up-input" ,type="password")
+                    div(class="input-box-done")
+                        label(for="name")
+                        input(name="name",autofocus="autofocus", placeholder="First name",class="sing-up-input" , type="text")
+                    div(class="input-box-done")
+                        label(for="surname")
+                        input(name="surname",autofocus="autofocus", placeholder="Last name",class="sing-up-input", type="text")
+                    div(class="input-box-done")
+                        input(type="submit", value="Sign up" , class="btn btn-lg btn-default")
+    include footer
