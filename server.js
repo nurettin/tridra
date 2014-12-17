@@ -370,6 +370,6 @@ app.post('/signup', function (req, res) {
 });
 
 
-http.createServer(app).listen(process.env.PORT || 3000,"127.0.0.1", function(){
-    console.log('Express server listening on port 3000');
+http.createServer(app).listen(process.env.PORT || 4242, function(){
+    console.log('Express server started on port', process.env.PORT);
 });
